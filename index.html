@@ -3,135 +3,189 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Crie seu evento</title>
+    <title>Desafio Intermediário</title>
 
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./style.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Staatliches&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap"
       rel="stylesheet"
     />
   </head>
   <body>
-    <div class="page">
+    <div id="main-page">
       <header>
-        <h1>Crie e compartilhe seu evento.</h1>
-        <p>O primeiro passo, é preencher esse formulário de inscrição.</p>
+        <h1>Mentoria</h1>
+        <p>Preencha o formulário abaixo para agendar a sua mentoria</p>
       </header>
 
-      <form id="my-form">
+      <form id="form-page">
+        <!-- Personal information -->
         <fieldset>
-          <div class="fileldset-warpper">
-            <legend>Informações do Evento</legend>
+          <div class="fieldset-warpper">
+            <legend>Informações pessoais</legend>
 
+            <!-- Input user name and last name -->
             <div class="input-wrapper">
-              <label for="event-title">
-                Título do evento
-                <span> (minimo 8 caracteres) </span>
-              </label>
-              <input type="text" id="event-title" required minlength="8" />
-            </div>
+              <div class="user-name">
+                <!-- Input user name -->
+                <div class="first-name">
+                  <label for="user-first-name">Nome</label>
+                  <br />
+                  <input type="text" id="user-first-name" required />
+                </div>
 
-            <div class="input-wrapper">
-              <label for="event-link">
-                Link do evento
-                <span> (comece com https://) </span>
-              </label>
-              <input type="url" id="event-link" required />
-            </div>
-
-            <div class="input-wrapper">
-              <label for="event-whastsapp">
-                Whatsapp para contato
-                <span> (somente números) </span>
-              </label>
-              <input type="number" id="event-whastsapp" />
-            </div>
-
-            <div class="input-wrapper">
-              <label for="event-info"> Informações extras</label>
-              <textarea id="event-info"></textarea>
-            </div>
-
-            <div class="input-wrapper">
-              <label for="event-category"> Categoria </label>
-              <select id="event-category">
-                <option value="live">Ao vivo</option>
-                <option value="podcast">Podcast</option>
-                <option value="mentorship">Mentoria</option>
-              </select>
-            </div>
-          </div>
-        </fieldset>
-
-        <fieldset>
-          <div class="fileldset-warpper">
-            <legend>Privacidade</legend>
-
-            <div class="input-wrapper">
-              <label for="event-email">
-                E-mail do administrador
-                <span>(digite um E-mail válido)</span>
-              </label>
-              <input type="email" id="event-email" />
-            </div>
-
-            <div class="input-wrapper">
-              <label for="event-password">
-                Senha de acesso para os participantes
-                <span>(minimo 8 caracteres)</span>
-              </label>
-              <input
-                type="password"
-                id="event-password"
-                required
-                minlength="8"
-              />
-            </div>
-
-            <div class="checkbox-wrapper">
-              <input type="checkbox" id="event-private" />
-              <label for="event-private">Evento privado</label>
-            </div>
-          </div>
-        </fieldset>
-
-        <fieldset>
-          <div class="fileldset-warpper">
-            <legend>Dia e hora</legend>
-
-            <div class="col-3">
-              <div class="input-wrapper">
-                <label for="event-date"> Data </label>
-                <input type="email" id="event-date" data />
+                <!-- Input user last name -->
+                <div class="last-name">
+                  <label for="user-last-name">Sobrenome</label>
+                  <br />
+                  <input type="text" id="user-last-name" />
+                </div>
               </div>
+            </div>
 
-              <div class="input-wrapper">
-                <label for="event-begin"> Das </label>
-                <input type="time" id="event-begin" />
+            <!-- Input user E-mail addres -->
+            <div class="input-wrapper">
+              <div class="user-e-mail-addres">
+                <label for="user-e-mail">
+                  Email
+                  <span>(Digite um email válido)</span>
+                </label>
+                <br />
+                <input type="text" id="user-e-mail" required />
               </div>
+            </div>
 
-              <div class="input-wrapper">
-                <label for="event-end"> Até </label>
-                <input type="time" id="event-end" />
+            <!-- Input user password -->
+            <div class="input-wrapper">
+              <div class="user-password">
+                <label for="user-pasword">
+                  Senha
+                  <span>(mínimo de 6 caracteres)</span>
+                </label>
+                <br />
+                <input type="password" id="user-pasword" required />
               </div>
             </div>
           </div>
         </fieldset>
 
-        <button class="button">Salvar evento</button>
+        <!-- Mentor information -->
+        <fieldset>
+          <div class="fieldset-warpper">
+            <legend>Informações do mentor</legend>
+
+            <div class="input-wrapper">
+              <div class="user-mentor_information">
+                <label for="user-mentor_information">
+                  Nome do seu mentor
+                  <span>(só o primeiro nome)</span>
+                </label>
+                <br />
+                <input type="text" id="user-mentor_information" required />
+              </div>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- Your available schedules -->
+        <fieldset>
+          <div class="fieldset-warpper">
+            <legend>Seus horários disponíveis</legend>
+
+            <!-- First Schedule -->
+            <div class="input-wrapper">
+              <h2>Primeira mentoria</h2>
+
+              <div class="user-first_schedule">
+                <!-- Date -->
+                <div class="user-first_schedule-date">
+                  <label for="user-first_schedule-date">
+                    Data
+                    <span>(DD/MM/AAAA)</span>
+                  </label>
+                  <br />
+                  <input type="date" id="user-first_schedule-date" required />
+                </div>
+
+                <!-- Time -->
+                <div class="user-first_schedule-time">
+                  <!-- start -->
+                  <div class="user-first_schedule_start">
+                    <label for="user-first_schedule_time_start"> Das </label>
+                    <br />
+                    <input
+                      type="time"
+                      id="user-first_schedule_time_start"
+                      required
+                    />
+                  </div>
+
+                  <!-- End -->
+                  <div class="user-first_schedule_end">
+                    <label for="user-first_schedule_time_end"> Até </label>
+                    <br />
+                    <input
+                      type="time"
+                      id="user-first_schedule_time_end"
+                      required
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Secont Schedule -->
+            <div class="input-wrapper">
+              <h2>Segunda mentoria</h2>
+
+              <div class="user-second_schedule">
+                <!-- Date -->
+                <div class="user-secont_schedule-date">
+                  <label for="user-secont_schedule-date">
+                    Data
+                    <span>(DD/MM/AAAA)</span>
+                  </label>
+                  <br />
+                  <input type="date" id="user-second_schedule-date"/>
+                </div>
+
+                <!-- Time -->
+                <div class="user-second_schedule-time">
+                  <!-- start -->
+                  <div class="user-second_schedule_start">
+                    <label for="user-second_schedule_time_start"> Das </label>
+                    <br />
+                    <input
+                      type="time"
+                      id="user-second_schedule_time_start"/>
+                  </div>
+
+                  <!-- End -->
+                  <div class="user-second_schedule_end">
+                    <label for="user-second_schedule_time_end"> Até </label>
+                    <br />
+                    <input
+                      type="time"
+                      id="user-second_schedule_time_end"/>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </fieldset>
       </form>
 
-      <!-- <footer>
+      <footer>
         <input
           class="button"
           type="submit"
           form="my-form"
-          value="Salvar evento"
+          value="SALVAR"
         />
-      </footer> -->
+      </footer>
     </div>
   </body>
 </html>
