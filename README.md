@@ -1,2 +1,7 @@
-# Criando-Formul-rios
-Criação de um formulário, esse foi proposto na trilha Explorer da Rocketseat. 
+# Criando-Formulários
+
+Uma pequeno página prevista apénas para a utilização em navegadores desktop.
+Em sua criação foram levados em consideração: 
+  Responsividade basica
+  Intuitividade
+  acessibilidade
